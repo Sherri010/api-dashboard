@@ -52,6 +52,7 @@ Take advantage of the random failures/delays to create a seamless user experienc
 * The request was not successful (the server responded with a `4xx` or `5xx` status code and an error message).
 
 ## Promise Reference
+* [Javascript Callstack & Event Loop [Video]](https://www.youtube.com/v/8aGhZQkoFbQ?start=255)
 * [Promises in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * Promises in jQuery
     - [jQuery.Deferred](http://api.jquery.com/jQuery.Deferred/)
