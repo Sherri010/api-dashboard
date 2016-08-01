@@ -1,4 +1,12 @@
-// DO NOT TOUCH
+// DO NOT MODIFY
+
+/*
+ * This module simulates randomized $http failures
+ *   and causes brief delays of up to 900ms.
+ *
+ * For a 50% chance that $http requests will fail,
+ *   in app.js set `FAIL_RATE = 50`.
+ */
 
 function flakyHttp ($httpProvider){
   $httpProvider.interceptors.push(function($q) {
