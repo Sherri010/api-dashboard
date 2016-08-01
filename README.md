@@ -3,7 +3,7 @@ In this lab we will explore promise chaining in Angular, using `$q` and `$http` 
 
 Your goal is build a user-friendly dashboard that can fetch and display the raw JSON for any given API endpoint.
 
-> A random delay of up to 9 seconds is in place on all $http request!
+> A random delay of up to 900ms is in place on all $http request!
 
 ## Setup Instructions
 Clone this repo.
@@ -37,14 +37,14 @@ User Interface Improvements:
 * Avoid the "flicker". Make sure the user never literally sees `{{ ... }}` or placeholder data rendered anywhere in the html.
 
 ## Randomized Request Failures
-In `js/app.js` you can modify the global variable `FAIL_RATE` to simulate, for example, a 50% chance that your `$http` requests will fail / be rejected (it will also cause a brief delay).
+In `js/app.js` you can modify the `FAIL_RATE` constant to simulate, for example, a 50% chance that your `$http` requests will fail / be rejected by the server.
 
 ```js
-FAIL_RATE = 50 // 50% percent chance requests will fail
+FAIL_RATE: 50 // 50% percent chance requests will fail
 ```
 
 #### User Experience
-Take advantage of the randomized failures/delays to create a seamless user experience. How can you signal the following application states to your user:
+Take advantage of the random failures/delays to create a seamless user experience. How can you signal the following application states to your user:
 
 * The request was sent to the server
 * We're waiting for a response (e.g. display a load spinner)
