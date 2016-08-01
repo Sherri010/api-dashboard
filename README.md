@@ -22,7 +22,7 @@ budo --open
 The homepage is broken. Your goal is to get the dasboard API interface working!
 
 You may code in:
-* `js/api_dashboard_controller.js`
+* `js/app.js`
 * `index.html`
 
 ## Api Dashboard Goals
