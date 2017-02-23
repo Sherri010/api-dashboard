@@ -3,7 +3,7 @@ angular
   .constant("flakyHttpSettings", {
     // randomized $http failure rate (and delay)
     // so you can test your success/error callbacks
-    FAIL_RATE: 0, // 0-100 percent
+    FAIL_RATE: 50, // 0-100 percent
     min_delay_ms: 0,
     max_delay_ms: 900
   })
@@ -22,14 +22,26 @@ function ApiDashboardController($http) {
 
   vm.api_endpoint = ""; // user inputed url
   vm.display_data = null; // JSON response data
-
+  vm.showSpinner = false;
   vm.getEndpoint = getEndpoint;
 
-  ////
-
-  function getEndpoint(){
+  function getEndpoint(url){
+    vm.display_data=null;
+    vm.showSpinner =true;
+    $http.get(url).then(onSuccess,onError);
     // request the api endpoint
     // display the raw response data in the view
+  }
+
+
+  function onSuccess(response){
+    vm.showSpinner=false;
+    console.log(response);
+    vm.display_data = response.data;
+  }
+  function onError(err){
+    vm.showSpinner=false;
+    console.log(err);
   }
 }
 

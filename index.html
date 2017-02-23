@@ -12,15 +12,16 @@
 </head>
 <body>
 
-<div> <!-- Attach the API Dashboard controller here -->
-  <input type="text">
-  <button>
+<div ng-controller="ApiDashboardController as apiDash"> <!-- Attach the API Dashboard controller here -->
+  <input type="text" ng-model="apiDash.api_endpoint">
+  <button ng-click="apiDash.getEndpoint(apiDash.api_endpoint)">
     Request Endpoint
   </button>
 
-  <h4>Results for <small>{{ "api_endpoint" }}</small></h4>
+  <h4>Results for <small>{{ apiDash.api_endpoint }}</small></h4>
+  <span  ng-show="apiDash.showSpinner" class="glyphicon glyphicon-refresh glyphicon-spin"></span>
   <pre>
-    {{ {example: "api response"} | json }}
+    {{ {example: apiDash.display_data} | json }}
   </pre>
 
 </div>
